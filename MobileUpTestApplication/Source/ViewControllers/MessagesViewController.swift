@@ -9,8 +9,12 @@ import UIKit
 
 class MessagesViewController: UIViewController {
     @IBOutlet private var messagesTableView: UITableView?
+    @IBOutlet private var nothingFoundLabel: UILabel?
 
-    private var messages = [Message]()
+    private static let apiURLString = "https://s3-eu-west-1.amazonaws.com/builds.getmobileup.com/storage/MobileUp-Test/api.json"
+
+    private var urlSessionDataTask: URLSessionDataTask?
+    private var messages = [MessageData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,70 @@ class MessagesViewController: UIViewController {
         messagesTableView?.register(UINib(nibName: "MessagesTableViewCell", bundle: nil), forCellReuseIdentifier: MessagesTableViewCell.cellReuseIdentifier)
         messagesTableView?.allowsSelection = false
         messagesTableView?.tableFooterView = UIView()
+
+        updateMessages()
+    }
+
+    private func displayAlert(withErrorCode errorCode: Int) {
+        updateContentVisibility()
+        let messageText: String
+        switch errorCode {
+        case NSURLErrorNotConnectedToInternet:
+            messageText = "No internet connection"
+        case NSURLErrorBadServerResponse:
+            messageText = "No connection to server. Please, try again later"
+        default:
+            messageText = "Unknown error: \(errorCode)"
+        }
+        let alert = UIAlertController(title: nil, message: messageText, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func updateContentVisibility() {
+        if messages.isEmpty {
+            nothingFoundLabel?.isHidden = false
+            messagesTableView?.isHidden = true
+        } else {
+            nothingFoundLabel?.isHidden = true
+            messagesTableView?.isHidden = false
+            messagesTableView?.reloadData()
+        }
+    }
+
+    private func updateMessages() {
+        nothingFoundLabel?.isHidden = true
+        messagesTableView?.isHidden = true
+        messages.removeAll()
+
+        if let url = URL(string: MessagesViewController.apiURLString) {
+            urlSessionDataTask?.cancel()
+            urlSessionDataTask = URLSession.shared.dataTask(with: URLRequest(url: url)) { [weak self] data, _, error in
+                if let error = error as NSError?, error.domain == NSURLErrorDomain {
+                    DispatchQueue.main.async {
+                        self?.displayAlert(withErrorCode: error.code)
+                    }
+                    return
+                }
+
+                guard let data = data else {
+                    return
+                }
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .iso8601
+                    self?.messages = try decoder.decode([MessageData].self, from: data)
+                    DispatchQueue.main.async {
+                        self?.updateContentVisibility()
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        self?.displayAlert(withErrorCode: NSURLErrorCannotDecodeContentData)
+                    }
+                }
+            }
+            urlSessionDataTask?.resume()
+        }
     }
 }
 
@@ -40,7 +108,7 @@ extension MessagesViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         let message = messages[indexPath.row]
-        cell.setup(withUserName: message.user.nickname, userAvatarURL: message.user.avatarUrl, messageText: message.data.text, receivingDate: message.data.receivingDate)
+        cell.setup(withUserName: message.user.nickname, userAvatarURL: message.user.avatarUrl, messageText: message.message.text, receivingDate: message.message.receivingDate)
         return cell
     }
 }

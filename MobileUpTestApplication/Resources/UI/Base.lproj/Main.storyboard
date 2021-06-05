@@ -16,7 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TUM-Nb-Sve">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhb-QQ-87a">
+                                <rect key="frame" x="135.66666666666666" y="470.66666666666669" width="119" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="15y-BK-6NJ"/>
+                                    <constraint firstAttribute="width" constant="119" id="ka8-f2-lha"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.5490196078431373" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TUM-Nb-Sve">
                                 <rect key="frame" x="0.0" y="149" width="390" height="661"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,12 +49,15 @@
                             <constraint firstItem="TUM-Nb-Sve" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="105" id="5m2-nr-Cke"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TUM-Nb-Sve" secondAttribute="bottom" id="C5C-op-rZf"/>
                             <constraint firstItem="TUM-Nb-Sve" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G0b-j7-xkb"/>
+                            <constraint firstItem="fhb-QQ-87a" firstAttribute="centerX" secondItem="TUM-Nb-Sve" secondAttribute="centerX" id="W67-pK-juL"/>
                             <constraint firstItem="rW9-dl-1Ww" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="g0q-Y5-1kX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TUM-Nb-Sve" secondAttribute="trailing" id="kw0-Uw-aFJ"/>
+                            <constraint firstItem="fhb-QQ-87a" firstAttribute="centerY" secondItem="TUM-Nb-Sve" secondAttribute="centerY" id="qUQ-8d-Gxh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="messagesTableView" destination="TUM-Nb-Sve" id="T5o-Qv-G0H"/>
+                        <outlet property="nothingFoundLabel" destination="fhb-QQ-87a" id="uDN-nj-x07"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
