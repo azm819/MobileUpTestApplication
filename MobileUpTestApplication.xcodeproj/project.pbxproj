@@ -57,12 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				03CDFD99266C0D3300BADED1 /* AppDelegate.swift */,
+				03CDFDA2266C0D3400BADED1 /* Assets.xcassets */,
+				03CDFDA7266C0D3400BADED1 /* Info.plist */,
+				03CDFDA4266C0D3400BADED1 /* LaunchScreen.storyboard */,
+				03CDFD9F266C0D3300BADED1 /* Main.storyboard */,
 				03CDFD9B266C0D3300BADED1 /* SceneDelegate.swift */,
 				03CDFD9D266C0D3300BADED1 /* ViewController.swift */,
-				03CDFD9F266C0D3300BADED1 /* Main.storyboard */,
-				03CDFDA2266C0D3400BADED1 /* Assets.xcassets */,
-				03CDFDA4266C0D3400BADED1 /* LaunchScreen.storyboard */,
-				03CDFDA7266C0D3400BADED1 /* Info.plist */,
 			);
 			path = MobileUpTestApplication;
 			sourceTree = "<group>";
@@ -124,8 +124,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03CDFDA6266C0D3400BADED1 /* LaunchScreen.storyboard in Resources */,
 				03CDFDA3266C0D3400BADED1 /* Assets.xcassets in Resources */,
+				03CDFDA6266C0D3400BADED1 /* LaunchScreen.storyboard in Resources */,
 				03CDFDA1266C0D3300BADED1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,9 +137,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03CDFD9E266C0D3300BADED1 /* ViewController.swift in Sources */,
 				03CDFD9A266C0D3300BADED1 /* AppDelegate.swift in Sources */,
 				03CDFD9C266C0D3300BADED1 /* SceneDelegate.swift in Sources */,
+				03CDFD9E266C0D3300BADED1 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
