@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		03CDFD9A266C0D3300BADED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDFD99266C0D3300BADED1 /* AppDelegate.swift */; };
 		03CDFD9C266C0D3300BADED1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDFD9B266C0D3300BADED1 /* SceneDelegate.swift */; };
-		03CDFD9E266C0D3300BADED1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDFD9D266C0D3300BADED1 /* ViewController.swift */; };
+		03CDFD9E266C0D3300BADED1 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDFD9D266C0D3300BADED1 /* MessagesViewController.swift */; };
 		03CDFDA1266C0D3300BADED1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CDFD9F266C0D3300BADED1 /* Main.storyboard */; };
 		03CDFDA3266C0D3400BADED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CDFDA2266C0D3400BADED1 /* Assets.xcassets */; };
 		03CDFDA6266C0D3400BADED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CDFDA4266C0D3400BADED1 /* LaunchScreen.storyboard */; };
+		03CDFDB1266C13CB00BADED1 /* MessagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03CDFDB0266C13CB00BADED1 /* MessagesTableViewCell.xib */; };
+		03CDFDB5266C147700BADED1 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDFDB4266C147700BADED1 /* MessagesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		03CDFD96266C0D3300BADED1 /* MobileUpTestApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileUpTestApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CDFD99266C0D3300BADED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03CDFD9B266C0D3300BADED1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		03CDFD9D266C0D3300BADED1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03CDFD9D266C0D3300BADED1 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		03CDFDA0266C0D3300BADED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03CDFDA2266C0D3400BADED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03CDFDA5266C0D3400BADED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03CDFDA7266C0D3400BADED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03CDFDB0266C13CB00BADED1 /* MessagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesTableViewCell.xib; sourceTree = "<group>"; };
+		03CDFDB4266C147700BADED1 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,57 @@
 		03CDFD98266C0D3300BADED1 /* MobileUpTestApplication */ = {
 			isa = PBXGroup;
 			children = (
-				03CDFD99266C0D3300BADED1 /* AppDelegate.swift */,
-				03CDFDA2266C0D3400BADED1 /* Assets.xcassets */,
-				03CDFDA7266C0D3400BADED1 /* Info.plist */,
-				03CDFDA4266C0D3400BADED1 /* LaunchScreen.storyboard */,
-				03CDFD9F266C0D3300BADED1 /* Main.storyboard */,
-				03CDFD9B266C0D3300BADED1 /* SceneDelegate.swift */,
-				03CDFD9D266C0D3300BADED1 /* ViewController.swift */,
+				03CDFDAE266C137400BADED1 /* Resources */,
+				03CDFDB2266C144900BADED1 /* Source */,
 			);
 			path = MobileUpTestApplication;
+			sourceTree = "<group>";
+		};
+		03CDFDAD266C136500BADED1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				03CDFD9D266C0D3300BADED1 /* MessagesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		03CDFDAE266C137400BADED1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				03CDFDA2266C0D3400BADED1 /* Assets.xcassets */,
+				03CDFDA7266C0D3400BADED1 /* Info.plist */,
+				03CDFDAF266C138C00BADED1 /* UI */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		03CDFDAF266C138C00BADED1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				03CDFDA4266C0D3400BADED1 /* LaunchScreen.storyboard */,
+				03CDFD9F266C0D3300BADED1 /* Main.storyboard */,
+				03CDFDB0266C13CB00BADED1 /* MessagesTableViewCell.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		03CDFDB2266C144900BADED1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				03CDFD99266C0D3300BADED1 /* AppDelegate.swift */,
+				03CDFD9B266C0D3300BADED1 /* SceneDelegate.swift */,
+				03CDFDB3266C146700BADED1 /* UI */,
+				03CDFDAD266C136500BADED1 /* ViewControllers */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		03CDFDB3266C146700BADED1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				03CDFDB4266C147700BADED1 /* MessagesTableViewCell.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +173,7 @@
 				03CDFDA3266C0D3400BADED1 /* Assets.xcassets in Resources */,
 				03CDFDA6266C0D3400BADED1 /* LaunchScreen.storyboard in Resources */,
 				03CDFDA1266C0D3300BADED1 /* Main.storyboard in Resources */,
+				03CDFDB1266C13CB00BADED1 /* MessagesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CDFD9A266C0D3300BADED1 /* AppDelegate.swift in Sources */,
+				03CDFDB5266C147700BADED1 /* MessagesTableViewCell.swift in Sources */,
+				03CDFD9E266C0D3300BADED1 /* MessagesViewController.swift in Sources */,
 				03CDFD9C266C0D3300BADED1 /* SceneDelegate.swift in Sources */,
-				03CDFD9E266C0D3300BADED1 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RTMM97K4JM;
-				INFOPLIST_FILE = MobileUpTestApplication/Info.plist;
+				INFOPLIST_FILE = MobileUpTestApplication/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +355,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RTMM97K4JM;
-				INFOPLIST_FILE = MobileUpTestApplication/Info.plist;
+				INFOPLIST_FILE = MobileUpTestApplication/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

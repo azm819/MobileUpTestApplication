@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  MobileUpTestApplication
 //
-//  Created by Azamat on 05.06.2021.
+//  Created by Azamat Farkhiev on 05.06.2021.
 //
 
 import UIKit

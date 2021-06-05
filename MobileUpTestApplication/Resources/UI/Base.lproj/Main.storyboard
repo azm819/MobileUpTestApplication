@@ -43,6 +43,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TUM-Nb-Sve" secondAttribute="trailing" id="kw0-Uw-aFJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messagesTableView" destination="TUM-Nb-Sve" id="T5o-Qv-G0H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
