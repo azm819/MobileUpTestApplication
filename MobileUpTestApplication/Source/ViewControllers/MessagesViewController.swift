@@ -25,6 +25,8 @@ class MessagesViewController: UIViewController {
         messagesTableView?.register(UINib(nibName: "MessagesTableViewCell", bundle: nil), forCellReuseIdentifier: MessagesTableViewCell.cellReuseIdentifier)
         messagesTableView?.allowsSelection = false
         messagesTableView?.tableFooterView = UIView()
+        messagesTableView?.refreshControl = UIRefreshControl()
+        messagesTableView?.refreshControl?.addTarget(self, action: #selector(onRefreshControlValueChanged), for: .valueChanged)
 
         updateMessages()
     }
@@ -46,20 +48,14 @@ class MessagesViewController: UIViewController {
     }
 
     private func updateContentVisibility() {
-        if messages.isEmpty {
-            nothingFoundLabel?.isHidden = false
-            messagesTableView?.isHidden = true
-        } else {
-            nothingFoundLabel?.isHidden = true
-            messagesTableView?.isHidden = false
-            messagesTableView?.reloadData()
-        }
+        nothingFoundLabel?.isHidden = !messages.isEmpty
+        messagesTableView?.reloadData()
+        messagesTableView?.refreshControl?.endRefreshing()
     }
 
     private func updateMessages() {
-        nothingFoundLabel?.isHidden = true
-        messagesTableView?.isHidden = true
         messages.removeAll()
+        messagesTableView?.reloadData()
 
         if let url = URL(string: MessagesViewController.apiURLString) {
             urlSessionDataTask?.cancel()
@@ -89,6 +85,10 @@ class MessagesViewController: UIViewController {
             }
             urlSessionDataTask?.resume()
         }
+    }
+
+    @objc func onRefreshControlValueChanged() {
+        updateMessages()
     }
 }
 
