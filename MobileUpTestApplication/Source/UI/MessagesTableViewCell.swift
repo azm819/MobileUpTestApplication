@@ -14,4 +14,7 @@ class MessagesTableViewCell: UITableViewCell {
     @IBOutlet private var dateTimeLabel: UILabel?
 
     static let cellReuseIdentifier: String = "MessagesTableViewCell"
+
+    func setup(withUserName userName: String, userAvatarURL avatarURL: String, messageText: String, receivingDate: Date) {
+    }
 }

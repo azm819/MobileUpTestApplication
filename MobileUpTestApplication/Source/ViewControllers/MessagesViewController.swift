@@ -10,6 +10,8 @@ import UIKit
 class MessagesViewController: UIViewController {
     @IBOutlet private var messagesTableView: UITableView?
 
+    private var messages = [Message]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,14 +26,21 @@ class MessagesViewController: UIViewController {
 
 extension MessagesViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        .zero
+        messages.isEmpty ? .zero : 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        .zero
+        messages.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: MessagesTableViewCell.cellReuseIdentifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MessagesTableViewCell.cellReuseIdentifier, for: indexPath) as? MessagesTableViewCell,
+              indexPath.row < messages.count
+        else {
+            return UITableViewCell()
+        }
+        let message = messages[indexPath.row]
+        cell.setup(withUserName: message.user.nickname, userAvatarURL: message.user.avatarUrl, messageText: message.data.text, receivingDate: message.data.receivingDate)
+        return cell
     }
 }

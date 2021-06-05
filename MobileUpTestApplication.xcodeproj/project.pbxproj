@@ -15,6 +15,7 @@
 		03CDFDA6266C0D3400BADED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CDFDA4266C0D3400BADED1 /* LaunchScreen.storyboard */; };
 		03CDFDB1266C13CB00BADED1 /* MessagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03CDFDB0266C13CB00BADED1 /* MessagesTableViewCell.xib */; };
 		03CDFDB5266C147700BADED1 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDFDB4266C147700BADED1 /* MessagesTableViewCell.swift */; };
+		03CDFDBA266C1CC800BADED1 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDFDB9266C1CC800BADED1 /* DataStructures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		03CDFDA7266C0D3400BADED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03CDFDB0266C13CB00BADED1 /* MessagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesTableViewCell.xib; sourceTree = "<group>"; };
 		03CDFDB4266C147700BADED1 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
+		03CDFDB9266C1CC800BADED1 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				03CDFD99266C0D3300BADED1 /* AppDelegate.swift */,
+				03CDFDB9266C1CC800BADED1 /* DataStructures.swift */,
 				03CDFD9B266C0D3300BADED1 /* SceneDelegate.swift */,
 				03CDFDB3266C146700BADED1 /* UI */,
 				03CDFDAD266C136500BADED1 /* ViewControllers */,
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CDFD9A266C0D3300BADED1 /* AppDelegate.swift in Sources */,
+				03CDFDBA266C1CC800BADED1 /* DataStructures.swift in Sources */,
 				03CDFDB5266C147700BADED1 /* MessagesTableViewCell.swift in Sources */,
 				03CDFD9E266C0D3300BADED1 /* MessagesViewController.swift in Sources */,
 				03CDFD9C266C0D3300BADED1 /* SceneDelegate.swift in Sources */,
