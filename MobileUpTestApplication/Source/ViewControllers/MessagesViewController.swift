@@ -49,6 +49,7 @@ class MessagesViewController: UIViewController {
 
     private func updateContentVisibility() {
         nothingFoundLabel?.isHidden = !messages.isEmpty
+        ImageDownloader.sharedInstance.resetCache()
         messagesTableView?.reloadData()
         messagesTableView?.refreshControl?.endRefreshing()
     }
@@ -87,10 +88,14 @@ class MessagesViewController: UIViewController {
         }
     }
 
+    // MARK: - Actions
+
     @objc func onRefreshControlValueChanged() {
         updateMessages()
     }
 }
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension MessagesViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {

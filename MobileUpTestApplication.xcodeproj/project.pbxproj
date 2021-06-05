@@ -16,6 +16,7 @@
 		03CDFDB1266C13CB00BADED1 /* MessagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03CDFDB0266C13CB00BADED1 /* MessagesTableViewCell.xib */; };
 		03CDFDB5266C147700BADED1 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDFDB4266C147700BADED1 /* MessagesTableViewCell.swift */; };
 		03CDFDBA266C1CC800BADED1 /* MessageDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDFDB9266C1CC800BADED1 /* MessageDataStructures.swift */; };
+		03CDFDC2266C3BD000BADED1 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDFDC1266C3BD000BADED1 /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		03CDFDB0266C13CB00BADED1 /* MessagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesTableViewCell.xib; sourceTree = "<group>"; };
 		03CDFDB4266C147700BADED1 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		03CDFDB9266C1CC800BADED1 /* MessageDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataStructures.swift; sourceTree = "<group>"; };
+		03CDFDC1266C3BD000BADED1 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				03CDFD99266C0D3300BADED1 /* AppDelegate.swift */,
+				03CDFDC1266C3BD000BADED1 /* ImageDownloader.swift */,
 				03CDFDB9266C1CC800BADED1 /* MessageDataStructures.swift */,
 				03CDFD9B266C0D3300BADED1 /* SceneDelegate.swift */,
 				03CDFDB3266C146700BADED1 /* UI */,
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CDFD9A266C0D3300BADED1 /* AppDelegate.swift in Sources */,
+				03CDFDC2266C3BD000BADED1 /* ImageDownloader.swift in Sources */,
 				03CDFDBA266C1CC800BADED1 /* MessageDataStructures.swift in Sources */,
 				03CDFDB5266C147700BADED1 /* MessagesTableViewCell.swift in Sources */,
 				03CDFD9E266C0D3300BADED1 /* MessagesViewController.swift in Sources */,

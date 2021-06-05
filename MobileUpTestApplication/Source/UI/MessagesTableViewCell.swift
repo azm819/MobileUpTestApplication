@@ -13,9 +13,16 @@ class MessagesTableViewCell: UITableViewCell {
     @IBOutlet private var messageLabel: UILabel?
     @IBOutlet private var dateTimeLabel: UILabel?
 
+    private var dataTask: URLSessionDataTask?
+
     static let cellReuseIdentifier: String = "MessagesTableViewCell"
 
     func setup(withUserName userName: String, userAvatarURL avatarURL: String, messageText: String, receivingDate: Date) {
+        dataTask?.cancel()
+        dataTask = ImageDownloader.sharedInstance.getTask(forURL: avatarURL) { [weak self] image in
+            self?.userImageView?.image = image
+        }
+        dataTask?.resume()
         userNameLabel?.text = userName
         messageLabel?.text = messageText
 
