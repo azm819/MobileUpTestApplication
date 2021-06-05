@@ -10,21 +10,21 @@ import Foundation
 struct UserData: Decodable {
     let nickname: String
     let avatarUrl: String
-    
+
     enum CodingKeys: String, CodingKey {
-            case nickname
-            case avatarUrl = "avatar_url"
-        }
+        case nickname
+        case avatarUrl = "avatar_url"
+    }
 }
 
 struct Message: Decodable {
     let text: String
     let receivingDate: Date
-    
+
     enum CodingKeys: String, CodingKey {
-            case text
-            case receivingDate = "receiving_date"
-        }
+        case text
+        case receivingDate = "receiving_date"
+    }
 }
 
 struct MessageData: Decodable {
