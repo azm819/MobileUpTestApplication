@@ -23,7 +23,6 @@ class MessagesViewController: UIViewController {
         messagesTableView?.dataSource = self
 
         messagesTableView?.register(UINib(nibName: "MessagesTableViewCell", bundle: nil), forCellReuseIdentifier: MessagesTableViewCell.cellReuseIdentifier)
-        messagesTableView?.allowsSelection = false
         messagesTableView?.tableFooterView = UIView()
         messagesTableView?.refreshControl = UIRefreshControl()
         messagesTableView?.refreshControl?.addTarget(self, action: #selector(onRefreshControlValueChanged), for: .valueChanged)
