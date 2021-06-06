@@ -66,7 +66,7 @@ class MessagesViewController: UIViewController {
 
         if let url = URL(string: MessagesViewController.apiURLString) {
             urlSessionDataTask?.cancel()
-            urlSessionDataTask = URLSession.shared.dataTask(with: URLRequest(url: url)) { [weak self] data, _, error in
+            urlSessionDataTask = URLSession(configuration: .ephemeral).dataTask(with: URLRequest(url: url)) { [weak self] data, _, error in
                 if let error = error as NSError?, error.domain == NSURLErrorDomain {
                     DispatchQueue.main.async {
                         self?.displayAlert(withError: error)

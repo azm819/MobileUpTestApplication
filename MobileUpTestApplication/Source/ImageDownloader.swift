@@ -35,7 +35,7 @@ class ImageDownloader {
         guard !urlString.isEmpty, !ImageDownloader.checkExisting(forURL: urlString, action: action), let url = URL(string: urlString) else {
             return nil
         }
-        return URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+        return URLSession(configuration: .ephemeral).dataTask(with: URLRequest(url: url)) { data, _, error in
             guard error == nil, let data = data else {
                 return
             }
