@@ -59,7 +59,6 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="rNt-9f-WhM" firstAttribute="leading" secondItem="dkr-CT-YAj" secondAttribute="trailing" constant="12" id="87X-Tm-uhq"/>
-                    <constraint firstAttribute="bottom" secondItem="dkr-CT-YAj" secondAttribute="bottom" constant="16" id="8KF-jf-rY2"/>
                     <constraint firstItem="CQm-7F-ms2" firstAttribute="leading" secondItem="dkr-CT-YAj" secondAttribute="trailing" constant="12" id="A16-Ku-KWc"/>
                     <constraint firstItem="dkr-CT-YAj" firstAttribute="leading" secondItem="Zwl-00-q5t" secondAttribute="leading" constant="26" id="APN-Nm-hjW"/>
                     <constraint firstItem="CQm-7F-ms2" firstAttribute="top" secondItem="rNt-9f-WhM" secondAttribute="bottom" constant="1" id="Hli-cG-Af6"/>

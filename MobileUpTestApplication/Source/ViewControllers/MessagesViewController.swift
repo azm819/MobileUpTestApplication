@@ -122,4 +122,8 @@ extension MessagesViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setup(withUserName: message.user.nickname, userAvatarURL: message.user.avatarUrl, messageText: message.message.text, receivingDate: message.message.receivingDate)
         return cell
     }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        76
+    }
 }
