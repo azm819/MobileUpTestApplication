@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,8 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dkr-CT-YAj">
-                        <rect key="frame" x="26" y="16.5" width="45" height="42"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person_default" translatesAutoresizingMaskIntoConstraints="NO" id="dkr-CT-YAj">
+                        <rect key="frame" x="26" y="15" width="45" height="45"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="45" id="BZ3-LR-li3"/>
@@ -35,7 +36,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQm-7F-ms2">
                         <rect key="frame" x="83" y="30" width="277" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.54902344940000003" green="0.54901272059999995" blue="0.54901999239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="textColor" name="text_gray"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyG-pf-tEX">
@@ -44,7 +45,7 @@
                             <constraint firstAttribute="height" constant="13" id="PP5-bn-bIS"/>
                             <constraint firstAttribute="width" constant="8" id="enO-Id-kV4"/>
                         </constraints>
-                        <color key="tintColor" red="0.81967031960000003" green="0.81928145890000004" blue="0.83921927210000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" name="chevron"/>
                         <state key="normal" image="chevron.right" catalog="system"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmK-LM-CY8">
@@ -53,7 +54,7 @@
                             <constraint firstAttribute="height" constant="20" id="MfJ-o1-ov7"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.54902344940000003" green="0.54901272059999995" blue="0.54901999239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="textColor" name="text_color_gray"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -83,6 +84,15 @@
     </objects>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="person_default" width="90" height="90"/>
+        <namedColor name="chevron">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text_color_gray">
+            <color red="0.5490196078431373" green="0.5490196078431373" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text_gray">
+            <color red="0.5490196078431373" green="0.5490196078431373" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

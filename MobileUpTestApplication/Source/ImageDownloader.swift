@@ -32,7 +32,7 @@ class ImageDownloader {
     }
 
     func getTask(forURL urlString: String, action: @escaping (_: UIImage?) -> Void) -> URLSessionDataTask? {
-        guard !ImageDownloader.checkExisting(forURL: urlString, action: action), let url = URL(string: urlString) else {
+        guard !urlString.isEmpty, !ImageDownloader.checkExisting(forURL: urlString, action: action), let url = URL(string: urlString) else {
             return nil
         }
         return URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in

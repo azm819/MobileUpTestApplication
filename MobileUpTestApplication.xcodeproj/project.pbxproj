@@ -17,6 +17,7 @@
 		03CDFDB5266C147700BADED1 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDFDB4266C147700BADED1 /* MessagesTableViewCell.swift */; };
 		03CDFDBA266C1CC800BADED1 /* MessageDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDFDB9266C1CC800BADED1 /* MessageDataStructures.swift */; };
 		03CDFDC2266C3BD000BADED1 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDFDC1266C3BD000BADED1 /* ImageDownloader.swift */; };
+		03CDFDC7266C4AF900BADED1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CDFDC6266C4AF900BADED1 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		03CDFDB4266C147700BADED1 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		03CDFDB9266C1CC800BADED1 /* MessageDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataStructures.swift; sourceTree = "<group>"; };
 		03CDFDC1266C3BD000BADED1 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		03CDFDC6266C4AF900BADED1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				03CDFDA2266C0D3400BADED1 /* Assets.xcassets */,
+				03CDFDC6266C4AF900BADED1 /* Colors.xcassets */,
 				03CDFDA7266C0D3400BADED1 /* Info.plist */,
 				03CDFDAF266C138C00BADED1 /* UI */,
 			);
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CDFDA3266C0D3400BADED1 /* Assets.xcassets in Resources */,
+				03CDFDC7266C4AF900BADED1 /* Colors.xcassets in Resources */,
 				03CDFDA6266C0D3400BADED1 /* LaunchScreen.storyboard in Resources */,
 				03CDFDA1266C0D3300BADED1 /* Main.storyboard in Resources */,
 				03CDFDB1266C13CB00BADED1 /* MessagesTableViewCell.xib in Resources */,
