@@ -19,6 +19,8 @@ class MessagesTableViewCell: UITableViewCell {
 
     func setup(withUserName userName: String, userAvatarURL avatarURL: String, messageText: String, receivingDate: Date) {
         dataTask?.cancel()
+        dataTask = nil
+        userImageView?.image = UIImage(named: "person.fill")
         dataTask = ImageDownloader.sharedInstance.getTask(forURL: avatarURL) { [weak self] image in
             self?.userImageView?.image = image
         }
