@@ -14,7 +14,14 @@ class ImageDownloader {
 
     private static let concurrentQueue = DispatchQueue(label: "ImageDownloader.concurrentQueue", attributes: .concurrent)
 
-    private init() {}
+    private static var session: URLSession?
+
+    private init() {
+        let configuration = URLSessionConfiguration.default
+        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+        configuration.urlCache = nil
+        ImageDownloader.session = URLSession(configuration: configuration)
+    }
 
     private static func checkExisting(forURL url: String, action: @escaping (_: UIImage?) -> Void) -> Bool {
         var result = false
@@ -35,7 +42,7 @@ class ImageDownloader {
         guard !urlString.isEmpty, !ImageDownloader.checkExisting(forURL: urlString, action: action), let url = URL(string: urlString) else {
             return nil
         }
-        return URLSession(configuration: .ephemeral).dataTask(with: URLRequest(url: url)) { data, _, error in
+        return ImageDownloader.session?.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard error == nil, let data = data else {
                 return
             }

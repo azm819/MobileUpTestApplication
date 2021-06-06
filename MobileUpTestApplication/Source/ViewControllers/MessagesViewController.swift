@@ -13,11 +13,18 @@ class MessagesViewController: UIViewController {
 
     private static let apiURLString = "https://s3-eu-west-1.amazonaws.com/builds.getmobileup.com/storage/MobileUp-Test/api.json"
 
+    private var session: URLSession?
+
     private var urlSessionDataTask: URLSessionDataTask?
     private var messages = [MessageData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let configuration = URLSessionConfiguration.default
+        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+        configuration.urlCache = nil
+        session = URLSession(configuration: configuration)
 
         messagesTableView?.delegate = self
         messagesTableView?.dataSource = self
@@ -66,7 +73,7 @@ class MessagesViewController: UIViewController {
 
         if let url = URL(string: MessagesViewController.apiURLString) {
             urlSessionDataTask?.cancel()
-            urlSessionDataTask = URLSession(configuration: .ephemeral).dataTask(with: URLRequest(url: url)) { [weak self] data, _, error in
+            urlSessionDataTask = session?.dataTask(with: URLRequest(url: url)) { [weak self] data, _, error in
                 if let error = error as NSError?, error.domain == NSURLErrorDomain {
                     DispatchQueue.main.async {
                         self?.displayAlert(withError: error)
