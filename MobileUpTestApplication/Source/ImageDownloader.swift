@@ -12,13 +12,13 @@ class ImageDownloader {
 
     private static var cachedImages = [String: UIImage]()
 
-    private static let syncQueue = DispatchQueue(label: "ImageDownloader.syncQueue", attributes: .concurrent)
+    private static let concurrentQueue = DispatchQueue(label: "ImageDownloader.concurrentQueue", attributes: .concurrent)
 
     private init() {}
 
     private static func checkExisting(forURL url: String, action: @escaping (_: UIImage?) -> Void) -> Bool {
         var result = false
-        ImageDownloader.syncQueue.sync {
+        ImageDownloader.concurrentQueue.sync {
             if cachedImages.keys.contains(url) {
                 DispatchQueue.main.async {
                     action(ImageDownloader.cachedImages[url])
@@ -40,7 +40,7 @@ class ImageDownloader {
                 return
             }
             let image = UIImage(data: data)
-            ImageDownloader.syncQueue.sync {
+            ImageDownloader.concurrentQueue.async(flags: .barrier) {
                 ImageDownloader.cachedImages[urlString] = image
             }
             DispatchQueue.main.async {
@@ -50,7 +50,7 @@ class ImageDownloader {
     }
 
     func resetCache() {
-        ImageDownloader.syncQueue.sync {
+        ImageDownloader.concurrentQueue.async(flags: .barrier) {
             ImageDownloader.cachedImages.removeAll()
         }
     }
