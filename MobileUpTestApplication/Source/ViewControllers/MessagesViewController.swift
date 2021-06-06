@@ -53,8 +53,11 @@ class MessagesViewController: UIViewController {
     private func updateContent() {
         nothingFoundLabel?.isHidden = !messages.isEmpty
         ImageDownloader.sharedInstance.resetCache()
-        messagesTableView?.reloadData()
         messagesTableView?.refreshControl?.endRefreshing()
+        UIView.animate(withDuration: 0.5, animations: { [weak self] in
+            self?.messagesTableView?.contentOffset = CGPoint.zero
+        })
+        messagesTableView?.reloadData()
     }
 
     private func updateMessages() {
@@ -83,7 +86,7 @@ class MessagesViewController: UIViewController {
                     }
                 } catch {
                     DispatchQueue.main.async {
-                        self?.displayAlert(withError: NSError(domain: NSURLErrorDomain, code: NSURLErrorCannotDecodeContentData, userInfo: nil))
+                        self?.displayAlert(withError: error as NSError)
                     }
                 }
             }
