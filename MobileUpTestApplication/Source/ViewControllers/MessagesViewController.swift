@@ -30,23 +30,27 @@ class MessagesViewController: UIViewController {
         updateMessages()
     }
 
-    private func displayAlert(withErrorCode errorCode: Int) {
-        updateContentVisibility()
+    private func displayAlert(withError error: NSError) {
+        updateContent()
+        let title: String?
         let messageText: String
-        switch errorCode {
+        switch error.code {
         case NSURLErrorNotConnectedToInternet:
+            title = nil
             messageText = "No internet connection"
         case NSURLErrorBadServerResponse:
+            title = nil
             messageText = "No connection to server. Please, try again later"
         default:
-            messageText = "Unknown error: \(errorCode)"
+            title = "Unknown error"
+            messageText = error.localizedDescription
         }
-        let alert = UIAlertController(title: nil, message: messageText, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: title, message: messageText, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 
-    private func updateContentVisibility() {
+    private func updateContent() {
         nothingFoundLabel?.isHidden = !messages.isEmpty
         ImageDownloader.sharedInstance.resetCache()
         messagesTableView?.reloadData()
@@ -62,7 +66,7 @@ class MessagesViewController: UIViewController {
             urlSessionDataTask = URLSession.shared.dataTask(with: URLRequest(url: url)) { [weak self] data, _, error in
                 if let error = error as NSError?, error.domain == NSURLErrorDomain {
                     DispatchQueue.main.async {
-                        self?.displayAlert(withErrorCode: error.code)
+                        self?.displayAlert(withError: error)
                     }
                     return
                 }
@@ -75,11 +79,11 @@ class MessagesViewController: UIViewController {
                     decoder.dateDecodingStrategy = .iso8601
                     self?.messages = try decoder.decode([MessageData].self, from: data)
                     DispatchQueue.main.async {
-                        self?.updateContentVisibility()
+                        self?.updateContent()
                     }
                 } catch {
                     DispatchQueue.main.async {
-                        self?.displayAlert(withErrorCode: NSURLErrorCannotDecodeContentData)
+                        self?.displayAlert(withError: NSError(domain: NSURLErrorDomain, code: NSURLErrorCannotDecodeContentData, userInfo: nil))
                     }
                 }
             }
