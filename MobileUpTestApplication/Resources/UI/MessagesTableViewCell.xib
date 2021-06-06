@@ -48,7 +48,7 @@
                         <state key="normal" image="chevron.right" catalog="system"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmK-LM-CY8">
-                        <rect key="frame" x="314" y="7.5" width="34" height="20"/>
+                        <rect key="frame" x="314" y="8" width="34" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="MfJ-o1-ov7"/>
                         </constraints>
@@ -65,8 +65,8 @@
                     <constraint firstItem="CQm-7F-ms2" firstAttribute="top" secondItem="rNt-9f-WhM" secondAttribute="bottom" constant="1" id="Hli-cG-Af6"/>
                     <constraint firstItem="dkr-CT-YAj" firstAttribute="top" secondItem="Zwl-00-q5t" secondAttribute="top" constant="15" id="VmC-hA-TYV"/>
                     <constraint firstItem="rNt-9f-WhM" firstAttribute="top" secondItem="Zwl-00-q5t" secondAttribute="top" constant="7" id="Vnt-UF-Rmh"/>
-                    <constraint firstItem="AyG-pf-tEX" firstAttribute="top" secondItem="Zwl-00-q5t" secondAttribute="top" constant="11.5" id="cJj-fD-SeK"/>
-                    <constraint firstItem="xmK-LM-CY8" firstAttribute="top" secondItem="Zwl-00-q5t" secondAttribute="top" constant="7.5" id="eET-bZ-abu"/>
+                    <constraint firstItem="AyG-pf-tEX" firstAttribute="centerY" secondItem="rNt-9f-WhM" secondAttribute="centerY" id="cJj-fD-SeK"/>
+                    <constraint firstItem="xmK-LM-CY8" firstAttribute="centerY" secondItem="rNt-9f-WhM" secondAttribute="centerY" id="eET-bZ-abu"/>
                     <constraint firstAttribute="trailing" secondItem="CQm-7F-ms2" secondAttribute="trailing" constant="15" id="l9b-go-vmJ"/>
                     <constraint firstItem="AyG-pf-tEX" firstAttribute="leading" secondItem="xmK-LM-CY8" secondAttribute="trailing" constant="8" id="rMx-aq-sfv"/>
                     <constraint firstAttribute="trailing" secondItem="AyG-pf-tEX" secondAttribute="trailing" constant="11" id="sxO-ce-s6y"/>
@@ -78,7 +78,7 @@
                 <outlet property="userImageView" destination="dkr-CT-YAj" id="CE7-Ov-g1M"/>
                 <outlet property="userNameLabel" destination="rNt-9f-WhM" id="069-E8-ptr"/>
             </connections>
-            <point key="canvasLocation" x="404" y="88"/>
+            <point key="canvasLocation" x="403.62318840579712" y="87.723214285714278"/>
         </tableViewCell>
     </objects>
     <resources>
